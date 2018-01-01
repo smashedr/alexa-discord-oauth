@@ -174,10 +174,10 @@ def gen_redirect():
     """
     url = config.get('Provider', 'authorize_uri', raw=True)
     params = {
-        'client_id': config.get('Provider', 'client_id'),
-        'redirect_uri': config.get('Provider', 'redirect_uri'),
-        'scope': config.get('Provider', 'oauth_scopes'),
         'response_type': 'code',
+        'client_id': config.get('Provider', 'client_id'),
+        'scope': config.get('Provider', 'oauth_scopes'),
+        'redirect_uri': config.get('Provider', 'redirect_uri'),
     }
     uri = '{}?{}'.format(url, urllib.parse.urlencode(params))
     return HttpResponseRedirect(uri)
