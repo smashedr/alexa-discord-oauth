@@ -163,7 +163,7 @@ def get_token(oauth_code):
         'redirect_uri': config.get('Provider', 'redirect_uri'),
         'grant_type': 'authorization_code',
     }
-    url = '{}/oauth2/token'.format(config.get('Provider', 'token_uri'))
+    url = config.get('Provider', 'token_uri')
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
     r = requests.post(url, data, headers=headers)
     # r.raise_for_status()
