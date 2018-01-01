@@ -75,7 +75,7 @@ def oauth_redirect(request):
         logger.info('code: {}'.format(request.session['code']))
         oauth = get_token(request.session['code'])
         logger.info(oauth)
-        token_id = ''.format(
+        token_id = '{} {}'.format(
             oauth['webhook']['id'], oauth['webhook']['token']
         )
 
