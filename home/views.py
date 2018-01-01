@@ -73,6 +73,9 @@ def oauth_redirect(request):
         request.session['code'] = request.GET['code']
         oauth = get_token(request.session['code'])
         logger.info(oauth)
+        token_id = ''.format(
+            oauth['webhook']['id'], oauth['webhook']['token']
+        )
 
         try:
             td = TokenDatabase.objects.get(code=request.session['code'])
@@ -88,7 +91,7 @@ def oauth_redirect(request):
 
         td = TokenDatabase(
             code=code,
-            token=oauth['access_token'],
+            token=token_id,
         )
         td.save()
 

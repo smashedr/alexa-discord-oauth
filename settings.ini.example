@@ -8,7 +8,7 @@ home_site      = https://alexa-skills.solutions/
 [Logging]
 app_handler    = file
 app_level      = DEBUG
-django_handler = console
+django_handler = file
 django_level   = INFO
 log_file       = /var/log/alexa-slack-oauth/django.log
 
