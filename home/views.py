@@ -177,8 +177,9 @@ def gen_redirect():
         'client_id': config.get('Provider', 'client_id'),
         'redirect_uri': config.get('Provider', 'redirect_uri'),
         'scope': config.get('Provider', 'oauth_scopes'),
+        'response_type': 'code',
     }
-    uri = '{}/?{}'.format(url, urllib.parse.urlencode(params))
+    uri = '{}?{}'.format(url, urllib.parse.urlencode(params))
     return HttpResponseRedirect(uri)
 
 
