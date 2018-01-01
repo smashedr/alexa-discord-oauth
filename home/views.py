@@ -78,6 +78,9 @@ def oauth_redirect(request):
         token_id = '{} {}'.format(
             oauth['webhook']['id'], oauth['webhook']['token']
         )
+        logger.info('id: {}'.format(oauth['webhook']['id']))
+        logger.info('token: {}'.format(oauth['webhook']['token']))
+        logger.info('token_id: {}'.format(token_id))
 
         try:
             td = TokenDatabase.objects.get(code=request.session['code'])
