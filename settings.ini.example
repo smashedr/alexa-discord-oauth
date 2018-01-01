@@ -1,0 +1,33 @@
+[App]
+debug          = True
+secret         = xxxxxxxxxxxxxxxxxxxx
+allowed_hosts  = *
+static_root    = C:\tmp
+home_site      = https://alexa-skills.solutions/
+
+[Logging]
+app_handler    = file
+app_level      = DEBUG
+django_handler = console
+django_level   = INFO
+log_file       = /var/log/alexa-slack-oauth/django.log
+
+[Amazon]
+client_id      = xxxxxxxxxxxxxxxxxxxx
+client_secret  = xxxxxxxxxxxxxxxxxxxx
+redirect_uri   = https://pitangui.amazon.com/api/skill/link/XXXXXXXXXX
+
+[Provider]
+redirect_uri   = https://discord-dev.alexa-skills.solutions/redirect
+authorize_uri  = https://discordapp.com/api/oauth2/authorize
+token_uri      = https://discordapp.com/api/oauth2/token
+oauth_scopes   = webhook.incoming
+client_id      = xxxxxxxxxxxxxxxxxxxx
+client_secret  = xxxxxxxxxxxxxxxxxxxx
+
+[Database]
+name           = database
+user           = database
+pass           = xxxxxxxxxxxxxxxxxxxx
+host           = mysql
+port           = 3306

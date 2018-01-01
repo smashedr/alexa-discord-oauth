@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+{% load staticfiles %}
+
+{% block menu %}{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-4 text-center">
+
+            <p></p>
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <img class="img-responsive center-block" src="{% static 'images/al64.png' %}" alt="alexa-slack">
+                </div>
+                <div class="col-xs-4">
+                    <img class="img-responsive center-block" src="{% static 'images/arrow64.png' %}" alt="alexa-slack">
+                </div>
+                <div class="col-xs-4">
+                    <img class="img-responsive center-block" src="{% static 'images/discord64.png' %}" alt="alexa-slack">
+                </div>
+            </div>
+            <h2 class="text-center">alexa-slack</h2>
+
+            <p>
+                You are being redirected to Slack to authorize this Skill.
+            </p>
+            <div class="alert alert-info" role="alert">
+                <p>This is text in a blue box...</p>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
