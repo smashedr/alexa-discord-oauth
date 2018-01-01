@@ -59,18 +59,20 @@ def oauth_redirect(request):
     """
     # View  /redirect
     """
-    try:
-        if request.GET['error'] == 'access_denied':
-            logger.info('access_denied')
-            return redirect_err(
-                request, 'Request was not Authorized by you or Discord.'
-            )
-    except Exception as error:
-        logger.info(error)
-        pass
+    log_req(request)
+    # try:
+    #     if request.GET['error'] == 'access_denied':
+    #         logger.info('access_denied')
+    #         return redirect_err(
+    #             request, 'Request was not Authorized by you or Discord.'
+    #         )
+    # except Exception as error:
+    #     logger.info(error)
+    #     pass
 
     try:
         request.session['code'] = request.GET['code']
+        logger.info('code: {}'.format(request.session['code']))
         oauth = get_token(request.session['code'])
         logger.info(oauth)
         token_id = ''.format(
